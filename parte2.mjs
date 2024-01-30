@@ -201,4 +201,49 @@
 
 // //  ------------------------------------------------
 
+// CLASSES / OBJETOS
+// const name = 'Arceno'
+// const age = 30
+
+// const pessoa = {
+//   name: 'Jackson',
+//   age: 27,
+//   isDev: true,
+//   greet() {
+//     console.log(`Olá, meu nome é ${this.name} e eu tenho ${this.age} anos`)
+//   }
+// }
+// pessoa.greet()
+
+class Pessoa {
+  static name = 'Arceno'
+  static age = 27
+  #isDev // propriedade privada
+
+  constructor(name, age, isDev) {
+    this.name = name
+    this.age = age
+    this.#isDev = isDev
+  }
+
+  static staticGreet() {
+    (() => {
+      console.log(`Olá, meu nome é ${this.name} e eu tenho ${this.age} anos`)
+    })()
+  }
+
+  greet() {
+    (() => {
+      console.log(`Olá, meu nome é ${this.name} e eu tenho ${this.age} anos`)
+    })()
+  }
+}
+
+Pessoa.staticGreet()
+const pessoa = new Pessoa('Jackson', 27, true)
+pessoa.greet()
+console.log(pessoa.name)
+
+// ------------------------------------------------
+
 console.log('fim dos exemplos!')
